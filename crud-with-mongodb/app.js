@@ -17,19 +17,4 @@ app.use("/api/blogs", blogRouter);
 const mongoose = require("mongoose");
 
 //configure mongoose
-mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/CRUD",
-    {
-        useNewUrlParser: true,
-        useUnifieldTopology: true,
-    },
-    (err) => {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("connected to MongoDB");
-        }
-    }
-);
-
-
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/CRUD')
