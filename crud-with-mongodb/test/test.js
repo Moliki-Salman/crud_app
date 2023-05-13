@@ -9,6 +9,7 @@ chai.use(chaiHttp);
 
 describe("Blogs", () => {
   beforeEach(async () => {
+    console.log(mongoose.connection.db)
     const collections = await mongoose.connection.db.collections();
 
     for (const collection of collections) {
