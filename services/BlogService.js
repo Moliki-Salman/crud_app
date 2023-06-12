@@ -1,4 +1,5 @@
 const BlogModel = require("../models/Blog");
+console.log(BlogModel);
 
 exports.getAllBlogs = async () => {
   return await BlogModel.find();

@@ -9,9 +9,7 @@ chai.use(chaiHttp);
 
 describe("Blogs", () => {
   beforeEach(async () => {
-   
-      await Blog.deleteMany({});
-  
+    await Blog.deleteMany({});
   });
 
   describe("/GET blog", () => {
@@ -31,6 +29,8 @@ describe("Blogs", () => {
   describe("/POST blog", () => {
     it("it should new POST a blog", (done) => {
       let blog = {
+        type: "This",
+        required: "This",
         title: "This is the first blog",
         body: "This is a blog post",
         image:
@@ -52,6 +52,8 @@ describe("Blogs", () => {
   describe("/GET/:id blog", () => {
     it("it should GET a blog by the id", async () => {
       let blog = new Blog({
+        type: "This",
+        required: "This",
         title: "This is the first blog",
         body: "This is a blog post",
         image:
@@ -75,6 +77,8 @@ describe("Blogs", () => {
   describe("/PUT/:id blog", () => {
     it("it should UPDATE a blog given the id", async () => {
       let blog = new Blog({
+        type: "This",
+        required: "This",
         title: "This is the first blog",
         body: "This is a blog post",
         image:
@@ -87,6 +91,8 @@ describe("Blogs", () => {
         .request(app)
         .put("/api/blogs/" + blog.id)
         .send({
+          type: "This",
+          required: "This",
           title: "The first blog was updated",
           body: "This is a blog post",
           image:
@@ -103,6 +109,8 @@ describe("Blogs", () => {
   describe("/DELETE/:id blog", () => {
     it("it should DELETE a blog given the id", async () => {
       let blog = new Blog({
+        type: "This",
+        required: "This",
         title: "This is the first blog",
         body: "This is a blog post",
         image:
